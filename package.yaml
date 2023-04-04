@@ -1,0 +1,75 @@
+name:                astral-reader
+version:             0.1.0.0
+github:              "Innf107/astral-reader"
+license:             BSD3
+author:              "Finn Schneider"
+maintainer:          "mail@prophetlabs.de"
+copyright:           "2022 Finn Schneider"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/Innf107/astral-reader#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- feed
+- async
+- witherable
+- req
+- modern-uri
+- text
+- scotty
+- relude
+- time
+- directory
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+- -Wno-name-shadowing
+
+library:
+  source-dirs: src
+
+executables:
+  astral-reader-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - astral-reader
+
+tests:
+  astral-reader-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - astral-reader
+
+default-extensions:
+  - GHC2021
+  - OverloadedStrings
+  - BlockArguments
+  - NoImplicitPrelude

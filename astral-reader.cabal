@@ -1,0 +1,106 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           astral-reader
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/Innf107/astral-reader#readme>
+homepage:       https://github.com/Innf107/astral-reader#readme
+bug-reports:    https://github.com/Innf107/astral-reader/issues
+author:         Finn Schneider
+maintainer:     mail@prophetlabs.de
+copyright:      2022 Finn Schneider
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/Innf107/astral-reader
+
+library
+  exposed-modules:
+      ReaderFeed
+      Request
+  other-modules:
+      Paths_astral_reader
+  hs-source-dirs:
+      src
+  default-extensions:
+      GHC2021
+      OverloadedStrings
+      BlockArguments
+      NoImplicitPrelude
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wno-name-shadowing
+  build-depends:
+      async
+    , base >=4.7 && <5
+    , directory
+    , feed
+    , modern-uri
+    , relude
+    , req
+    , scotty
+    , text
+    , time
+    , witherable
+  default-language: Haskell2010
+
+executable astral-reader-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_astral_reader
+  hs-source-dirs:
+      app
+  default-extensions:
+      GHC2021
+      OverloadedStrings
+      BlockArguments
+      NoImplicitPrelude
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wno-name-shadowing -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      astral-reader
+    , async
+    , base >=4.7 && <5
+    , directory
+    , feed
+    , modern-uri
+    , relude
+    , req
+    , scotty
+    , text
+    , time
+    , witherable
+  default-language: Haskell2010
+
+test-suite astral-reader-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_astral_reader
+  hs-source-dirs:
+      test
+  default-extensions:
+      GHC2021
+      OverloadedStrings
+      BlockArguments
+      NoImplicitPrelude
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wno-name-shadowing -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      astral-reader
+    , async
+    , base >=4.7 && <5
+    , directory
+    , feed
+    , modern-uri
+    , relude
+    , req
+    , scotty
+    , text
+    , time
+    , witherable
+  default-language: Haskell2010

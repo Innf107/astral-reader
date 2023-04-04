@@ -1,0 +1,58 @@
+body {
+    background-color: black;
+
+    font-family: sans-serif;
+}
+
+.grid.container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 1rem;
+}
+
+.item {
+    display: block;
+
+    background-color: hsl(var(--feed-hue), 100%, 20%);
+
+    color: white;
+
+    padding: 1rem;
+
+    text-decoration: none;
+}
+
+.itemTitle {
+    margin-top: 0;
+}
+
+nav {
+    display: flex;
+
+    color: white;
+}
+
+nav h1 {
+    font-size: 200%;
+}
+
+nav button {
+
+    background: none;
+    border: none;
+
+    color: white;
+    font-weight: bold;
+
+    margin-left: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+nav button:hover {
+    background-color: rgb(0, 0, 160);
+}
